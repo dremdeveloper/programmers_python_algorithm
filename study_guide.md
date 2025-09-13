@@ -14,7 +14,7 @@
 
   * 추상적인 알고리즘은 구체적인 코드로 구현될 때 비로소 의미를 갖습니다. 각 자료구조와 알고리즘에 대한 최소 기능 단위의 예시 코드를 직접 작성하여 `GitHub` 등에 아카이빙하는 것을 권장합니다.
 
-  ```python
+```python
   // 예시: C++로 구현한 Union-Find의 find 함수
   // 경로 압축(Path Compression) 최적화 적용
 def find_parent(parent, x):
@@ -22,7 +22,7 @@ def find_parent(parent, x):
         return x
     parent[x] = find_parent(parent, parent[x]) # 재귀적으로 부모를 찾아 올라가며 경로를 압축
     return parent[x]
-  ```
+```
 
 
   * **지식 베이스 구축 (Building a Knowledge Base)**
