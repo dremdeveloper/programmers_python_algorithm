@@ -1,0 +1,66 @@
+# 코딩 테스트 정복을 위한 가이드라인
+
+알고리즘 문제 해결 능력을 극대화하기 위한 체계적인 접근법을 제시합니다. 모든 과정은 장기적인 실력 향상을 목표로 하며, 단기적인 암기보다 근본적인 이해를 추구합니다.
+
+### **I. 개념 정립 (Conceptualization & Internalization)**
+
+이론을 자신의 것으로 체화하는 단계입니다. 메타인지를 활용하여 학습의 효율을 높이는 것이 핵심입니다.
+
+* **능동적 재구성 (Active Reconstruction)**
+
+  * 단순한 `Copy-Paste`는 지식의 파편화만 초래할 뿐, 문제 해결에 필요한 스키마(Schema)를 형성하지 못합니다. 학습한 개념은 반드시 자신의 언어로 재정의하고, 핵심 원리를 요약하는 과정을 거쳐야 합니다. 이는 개념의 내재화(Internalization)를 위한 필수 과정입니다.
+
+* **구체화와 구현 (Embodiment & Implementation)**
+
+  * 추상적인 알고리즘은 구체적인 코드로 구현될 때 비로소 의미를 갖습니다. 각 자료구조와 알고리즘에 대한 최소 기능 단위의 예시 코드를 직접 작성하여 `GitHub` 등에 아카이빙하는 것을 권장합니다.
+
+  ```python
+  // 예시: C++로 구현한 Union-Find의 find 함수
+  // 경로 압축(Path Compression) 최적화 적용
+def find_parent(parent, x):
+    if parent[x] == x:
+        return x
+    parent[x] = find_parent(parent, parent[x]) # 재귀적으로 부모를 찾아 올라가며 경로를 압축
+    return parent[x]
+  ```
+
+
+  * **지식 베이스 구축 (Building a Knowledge Base)**
+
+  * 학습 내용은 일관된 포맷으로 정리하여 개인화된 지식 베이스를 구축해야 합니다. 이는 복습 시 탐색 비용(Search Cost)을 줄이고, 유사 문제에 대한 패턴 인지(Pattern Recognition) 능력을 가속화합니다. `Notion`, `Obsidian` 등의 툴 활용을 추천합니다.
+
+### **II. 문제 해결 전략 (Problem-Solving Strategy)**
+
+문제 풀이는 단순히 정답을 맞히는 행위가 아니라, 자신의 논리적 허점을 발견하고 보완하는 과정입니다.
+
+#### **1. 성공적으로 해결한 문제 (On a Successful Solve)**
+
+* **솔루션 추상화 (Solution Abstraction)**
+
+  * **핵심 로직:** 문제 해결에 사용된 핵심 알고리즘(e.g., `BFS`, `Dynamic Programming`)과 자료구조를 명시합니다.
+
+  * **시간/공간 복잡도 분석:** `Big-O` 표기법을 사용하여 구현된 솔루션의 시간 및 공간 복잡도를 반드시 분석하고 기록합니다. 이것이 최적의 해법인지 고찰하는 습관을 들여야 합니다.
+
+* **키워드 및 함정 분석 (Keyword & Edge Case Analysis)**
+
+  * 문제에서 특정 알고리즘을 암시하는 키워드("최단 거리", "모든 경우", "최대 가치" 등)를 정리합니다.
+
+  * `Integer Overflow`, `Empty Input`, `Constraints` 등과 같이 놓치기 쉬운 예외 케이스(Edge Case)나 함정을 명시하여 실수를 방지합니다.
+
+* **사고 과정 복기 (Post-mortem Analysis)**
+
+  * 최종 풀이에 도달하기까지의 사고 과정을 복기합니다. 비효율적이었던 초기 접근법, 그리고 그것을 폐기하고 현재의 솔루션으로 전환하게 된 논리적 분기점(Branching Point)을 기록하면 문제 해결 휴리스틱스(Heuristics)가 정교해집니다.
+
+#### **2. 해결에 실패했거나 답을 참고한 문제 (On a Failed Attempt or Post-Hint Solve)**
+
+* **갭 분석 (Gap Analysis)**
+
+  * **접근법의 한계:** 자신이 도달했던 최종 논리에서 왜 더 이상 진전하지 못했는지 명확하게 기술합니다.
+
+  * **해결의 열쇠:** 정답 코드가 이 교착 상태(Deadlock)를 어떤 아이디어나 자료구조, 알고리즘을 통해 해결했는지 비교 분석합니다. 여기서 본인의 지식 갭(Knowledge Gap)이 드러납니다.
+
+* **체화를 위한 반복 학습 (Solidification via Spaced Repetition)**
+
+  * 정답을 이해한 문제는 즉시 넘어가지 않습니다. 해당 풀이를 보지 않고 스스로 구현할 수 있을 때까지 연습합니다.
+
+  * 이후 약 일주일의 간격을 두고 다시 풀어보는 `Spaced Repetition`을 통해 단기 기억을 장기 기억으로 전환해야 합니다. 이 과정을 거치지 않은 지식은 쉽게 휘발됩니다.
